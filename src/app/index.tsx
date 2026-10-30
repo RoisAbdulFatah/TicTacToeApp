@@ -68,19 +68,35 @@ export default function App() {
   );
 
   // Teks status permainan
-  let status: string;
+  // Dipisah: label + simbol pemain (agar simbol bisa diberi warna sendiri)
+  let statusLabel: string;
+  let statusPlayer: Player | null = null;
   if (winner) {
-    status = `Pemenang: ${winner}!`;
+    statusLabel = 'Pemenang: ';
+    statusPlayer = winner;
   } else if (isBoardFull) {
-    status = 'Permainan Seri (Draw)!';
+    statusLabel = 'Permainan Seri (Draw)!';
   } else {
-    status = `Giliran Pemain: ${xIsNext ? 'X' : 'O'}`;
+    statusLabel = 'Giliran Pemain: ';
+    statusPlayer = xIsNext ? 'X' : 'O';
   }
 
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.title}>Tic Tac Toe</Text>
-      <Text style={styles.status}>{status}</Text>
+      <View style={styles.statusRow}>
+        <Text style={styles.status}>{statusLabel}</Text>
+        {statusPlayer && (
+          <Text
+            style={[
+              styles.statusPlayer,
+              statusPlayer === 'X' ? styles.textX : styles.textO,
+            ]}
+          >
+            {statusPlayer}
+          </Text>
+        )}
+      </View>
 
       {/* Papan 3x3 dengan Flexbox */}
       <View style={styles.board}>
@@ -104,6 +120,8 @@ export default function App() {
       <TouchableOpacity style={styles.resetButton} onPress={resetGame}>
         <Text style={styles.resetButtonText}>Mulai Ulang</Text>
       </TouchableOpacity>
+
+      <Text style={styles.author}>Develop by: Rois Abdul Fatah</Text>
     </SafeAreaView>
   );
 }
@@ -123,11 +141,26 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     color: '#333',
   },
-  status: {
-    fontSize: 18,
+  statusRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
     marginBottom: 20,
+  },
+  status: {
+    fontSize: 20,
     fontWeight: '600',
     color: '#555',
+  },
+  statusPlayer: {
+    fontSize: 26,
+    fontWeight: 'bold',
+  },
+  author: {
+    marginTop: 40,
+    fontSize: 16,
+    fontWeight: '600',
+    color: '#777',
   },
   board: {
     borderWidth: 4,
