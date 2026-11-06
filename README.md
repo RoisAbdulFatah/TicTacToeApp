@@ -70,7 +70,7 @@ TicTacToeApp/
 ![Tampilan Awal](Screenshots/1-Papan-Awal.jpeg)
 
 ### Saat Permainan Berlangsung
-![Permainan](Screenshots/2-Jalannya-Permainan.jpeg)
+![Permainan](Screenshots/2-Jalannya-Bermain.jpeg)
 
 ### Pemenang
 ![Pemenang](Screenshots/3-Pemenang.jpeg)
