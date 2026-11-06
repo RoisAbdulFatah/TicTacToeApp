@@ -67,10 +67,13 @@ TicTacToeApp/
 ## Screenshot
 
 ### Tampilan Awal
-![Tampilan Awal](Screenshots/1-Tampilan-Awal.jpeg)
+![Tampilan Awal](Screenshots/1-Papan-Awal.jpeg)
 
 ### Saat Permainan Berlangsung
-![Permainan](Screenshots/2-Permainan.jpeg)
+![Permainan](Screenshots/2-Jalannya-Permainan.jpeg)
 
 ### Pemenang
 ![Pemenang](Screenshots/3-Pemenang.jpeg)
+
+### Draw
+![Pemenang](Screenshots/4-Draw.jpeg)
